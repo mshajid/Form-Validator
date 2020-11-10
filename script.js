@@ -30,6 +30,7 @@ function checkEmail(input) {
     }
 }
 
+// Check Required
 function checkRequired(inputArr) {
     inputArr.forEach(function(input) {
         if(input.value.trim() === "") {
@@ -40,12 +41,15 @@ function checkRequired(inputArr) {
     })
 }
 
+// Check Password Match Input 1 . Input 2
 function checkPasswordMatch(input1, input2) {
     if(input1.value !== input2.value) {
         showError(input2, "Passwords do not match");
     }
 }
 
+
+// For Checking Length
 function checkLength(input, min, max) {
     if(input.value.length < min) {
         showError(input, `${getFieldName(input)} must be atleast ${min} characters`)
@@ -56,10 +60,7 @@ function checkLength(input, min, max) {
     }
 }
 
-
-
-
-
+// Capitalized First Letter of ERROR Small Message
 function getFieldName(input) {
     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
